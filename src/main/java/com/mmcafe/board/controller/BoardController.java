@@ -1,0 +1,19 @@
+package com.mmcafe.board.controller;
+import com.mmcafe.board.dto.*;
+import com.mmcafe.board.service.BoardService;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+@RestController
+@RequestMapping("/boards")
+public class BoardController {
+    private final BoardService service;
+    public BoardController(BoardService service) { this.service = service; }
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public BoardResponse create(@RequestBody BoardRequest request) { return service.createBoard(request); }
+    @GetMapping("/{id}")
+    public BoardResponse get(@PathVariable long id) { return service.getBoard(id); }
+
+
+
+}
