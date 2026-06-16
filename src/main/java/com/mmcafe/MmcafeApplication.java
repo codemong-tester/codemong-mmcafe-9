@@ -7,3 +7,4 @@ public class MmcafeApplication {
         SpringApplication.run(MmcafeApplication.class, args);
     }
 }
+// step 02 .. 유지되려나?
